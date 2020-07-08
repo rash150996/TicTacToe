@@ -17,6 +17,17 @@ flip=$(( RANDOM%2 ))
 if [ $flip -eq 1 ]
 then
 	echo "It is your turn to choose"
+	read -p "Enter your choice " choice
+	echo "Your choice $choice"
 else
 	echo "it is computer's turn to choose"
+	option=$(( RANDOM%2 ))
+	if [ $option -eq 1 ]
+	then
+		echo "Computer chose X"
+		choice="X"
+	else
+		echo "Computer chose O"
+		choice="O"
+	fi
 fi
